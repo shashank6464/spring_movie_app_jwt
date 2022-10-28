@@ -22,13 +22,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    //Add a user
+    //Adding a user
     @PostMapping(value = "/addUser")
     public String signup(@RequestBody User user){
         return userService.signup(user);
     }
 
-    //User login using email and password
+    //User login using email and password as input
     @PostMapping("/login")
     public String login(@RequestBody Map<String, Object> map){
         return userService.login(map.get("email").toString(), map.get("password").toString());

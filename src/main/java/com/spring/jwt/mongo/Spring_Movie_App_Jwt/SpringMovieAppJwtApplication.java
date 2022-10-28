@@ -9,7 +9,7 @@ public class SpringMovieAppJwtApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(SpringMovieAppJwtApplication.class, args);
-		System.out.println("Welcome");
+		System.out.println("Welcome to movie App");
 	}
 
 }

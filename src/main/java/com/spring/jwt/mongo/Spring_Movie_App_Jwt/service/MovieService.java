@@ -26,7 +26,7 @@ public class MovieService {
     }
 
 
-    //Save movie
+    // Save/Add movie
     public String saveMovie(Movie movie){
         Movie savedMovie = movieRepository.save(movie);
 

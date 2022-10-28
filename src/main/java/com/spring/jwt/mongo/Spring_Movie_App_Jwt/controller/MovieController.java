@@ -20,7 +20,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    //Add a movie
+    //Adding a movie
     @PostMapping("/addMovie")
     public String saveMovie(@RequestBody Movie movie){
         return movieService.saveMovie(movie);

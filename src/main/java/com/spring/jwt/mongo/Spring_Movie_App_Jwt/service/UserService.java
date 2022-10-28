@@ -42,7 +42,7 @@ public class UserService {
                 "\"}";
     }
 
-    //User login
+    //User login using email and password
     public String login(String email, String password){
         List<User> foundUsers = userRepository.getUsersByEmail(email);
 

@@ -35,7 +35,7 @@ public class UserService {
 
         User savedUser = userRepository.save(user);
         return "{" + "\"message\":"+
-                "\"Successfully Created User\","+
+                "\"User Created Successfully\","+
                 "\"data\": "
                 +savedUser+", "+
                 "\"auth token\":\""+
@@ -48,18 +48,22 @@ public class UserService {
 
         if(foundUsers.isEmpty()){
             return "{\n" +
-                    "\"message\":"+"\" Authentication Failed  \",\n"+
+                    "\"message\":"+
+                    "\" Authentication Failed  \",\n"+
                     "}";
         }
 
         else if(!foundUsers.get(0).getPassword().equals(password)){
             return "{\n" +
-                    "\"message\":"+"\" Incorrect Password (Try Again)\",\n"+
+                    "\"message\":"+
+                    "\" Incorrect Password (Try Again)\",\n"+
                     "}";
         }
         return "{\n" +
-                "\"message\":"+"\" User Successfully Logged In\",\n"+
-                "\"data\": {\n"+" Name : "+foundUsers.get(0).getName()+",\n"+
+                "\"message\":"+
+                "\" User Successfully Logged In\",\n"+
+                "\"data\": {\n"+
+                " Name : "+foundUsers.get(0).getName()+",\n"+
                 "Email : "+foundUsers.get(0).getEmail()+"\n"+
                 "\"token\":\""+tokenService.createToken(foundUsers.get(0).getId())+"\"" +
                 "}";
